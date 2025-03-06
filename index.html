@@ -27,6 +27,8 @@
             height: 4vh;
             border-radius: 10px;
             color: black;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
         }
         #big {
             width: 20vw;
@@ -64,10 +66,10 @@
         <div class="head">
             <div style="display: grid; background-color: rgb(78, 94, 98); padding: 10px; margin-bottom: 5px; font-weight: bold; color: aliceblue;">
                 <h1 id="first">Secondry Level Grading Scheme</h1>
-                <p>English</p><input id="eng" class="short">
-                <p>Math</p><input id="math" class="short">
-                <p>Literature</p><input id="lit" class="short">
-                <p>Government</p><input id="govt" class="short">
+                <p>English</p><input id="eng" placeholder="Enter score/100" class="short">
+                <p>Math</p><input id="math" placeholder="Enter score/100" class="short">
+                <p>Literature</p><input id="lit" placeholder="Enter score/100" class="short">
+                <p>Government</p><input id="govt" placeholder="Enter score/100" class="short">
                 <div style="display: flex; justify-content: center; justify-content: space-evenly; padding-top: 10px;">
                     <button id="big" onclick="get1()">Total</button>
                     <button id="big" onclick="get2()">Average</button>
