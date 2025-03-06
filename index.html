@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #first {
+            background-color: rgb(16, 16, 45);
+            color: antiquewhite;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-radius: 10px;
+        }
+        #head {
+            background-color: aqua;
+        }
+        #ans1 {
+            background-color: rgb(16, 16, 45);
+            color: antiquewhite;
+            border-radius: 10px;
+        }
+        .short {
+            width: 85vw;
+            height: 4vh;
+            border-radius: 10px;
+            color: aliceblue;
+        }
+        #big {
+            width: 20vw;
+            height: 5vh;
+            background-color: red;
+            color: aliceblue;
+            border-radius: 10px;
+        }
+        .space {
+            color: azure;
+        }
+        @media only screen and (min-width: 1150px) {
+                .head {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top: 30px;
+                }
+                .short {
+                     width: 40vw;
+                     height: 5vh;
+                     margin-left: 20px;
+                }
+                #header {
+                    width: 50vw;
+                }
+                #big {
+                    width: 10vw;
+                    height: 5vh;
+                    background-color: red;
+                    color: aliceblue;
+                }
+        }
+    </style>
+    <div>
+        <div class="head">
+            <div style="display: grid; background-color: rgb(78, 94, 98); padding: 10px; margin-bottom: 5px; font-weight: bold; color: aliceblue;">
+                <h1 id="first">Secondry Level Grading Scheme</h1>
+                <p>English</p><input id="eng" class="short">
+                <p>Math</p><input id="math" class="short">
+                <p>Literature</p><input id="lit" class="short">
+                <p>Government</p><input id="govt" class="short">
+                <div style="display: flex; justify-content: center; justify-content: space-evenly; padding-top: 10px;">
+                    <button id="big" onclick="get1()">Total</button>
+                    <button id="big" onclick="get2()">Average</button>
+                    <button id="big" onclick="get3()">Grade</button>
+                </div>
+            </div>
+            <div id="header" style="display: grid; background-color: rgb(78, 94, 98); text-align: center; padding: 10px;">
+                <div>
+                    <h1 id="ans1">Total</h1>
+                    <h2 class="space" id="total"></h2>
+                    <h1 id="ans1">Average</h1>
+                    <h2 class="space" id="average"></h2>
+                    <h1 id="ans1">Grade</h1>
+                    <h2 class="space" id="grade"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function get1() {
+            document.getElementById("total").innerHTML = 
+            Number(document.getElementById("eng").value) +
+            Number(document.getElementById("math").value) +
+            Number(document.getElementById("lit").value) +
+            Number(document.getElementById("govt").value)
+        }
+        function get2() {
+            document.getElementById("average").innerHTML = 
+            (Number(document.getElementById("eng").value) +
+            Number(document.getElementById("math").value) +
+            Number(document.getElementById("lit").value) +
+            Number(document.getElementById("govt").value))
+            /4
+        }
+    </script>
+</body>
+</html>
