@@ -11,7 +11,7 @@
             background-color: rgb(16, 16, 45);
             color: antiquewhite;
             text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: cursive;
             border-radius: 10px;
         }
         #head {
@@ -66,6 +66,7 @@
         <div class="head">
             <div style="display: grid; background-color: rgb(78, 94, 98); padding: 10px; margin-bottom: 5px; font-weight: bold; color: aliceblue;">
                 <h1 id="first">Secondry Level Grading Scheme</h1>
+                <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: whitesmoke;">STUDENT'S NAME: Bola Hammed Tinubu</h3>
                 <p>English</p><input id="eng" placeholder="Enter score/100" class="short">
                 <p>Math</p><input id="math" placeholder="Enter score/100" class="short">
                 <p>Literature</p><input id="lit" placeholder="Enter score/100" class="short">
@@ -90,19 +91,56 @@
     </div>
     <script>
         function get1() {
-            document.getElementById("total").innerHTML = 
-            Number(document.getElementById("eng").value) +
+            document.getElementById("total").innerHTML = "Bola Hammed Tinubu Score is:" + "<br>" +
+            (Number(document.getElementById("eng").value) +
             Number(document.getElementById("math").value) +
             Number(document.getElementById("lit").value) +
-            Number(document.getElementById("govt").value)
+            Number(document.getElementById("govt").value))
+
+            var eng = Number(document.getElementById("eng").value) 
+            var math = Number(document.getElementById("math").value) 
+            var lit = Number(document.getElementById("lit").value)
+            var govt = Number(document.getElementById("govt").value)
+            if (eng > 100 || math > 100 || lit > 100 || govt > 100) {
+                document.getElementById("total").innerHTML = "Alert: input cannot be more than 100"
+            } else {
+                
+            }
         }
         function get2() {
-            document.getElementById("average").innerHTML = 
+            document.getElementById("average").innerHTML = "Your Average Score is:" + "<br>" +
             (Number(document.getElementById("eng").value) +
             Number(document.getElementById("math").value) +
             Number(document.getElementById("lit").value) +
             Number(document.getElementById("govt").value))
             /4
+        }
+        function get3() {
+            var eng = Number(document.getElementById("eng").value) 
+            var math = Number(document.getElementById("math").value) 
+            var lit = Number(document.getElementById("lit").value)
+            var govt = Number(document.getElementById("govt").value)
+
+            var ans =(eng + math + lit + govt) /4
+
+            if (ans >= 75 && ans <= 100) {
+                document.getElementById("grade").innerHTML = "You got grade A" + "<br>" + "An excellent result, keep it up!"
+            }
+            else if(ans >= 65 && ans <= 74.99) {
+                document.getElementById("grade").innerHTML = "You got grade B" + "<br>" + "A good result, try more!"
+            }
+            else if (ans >=55 && ans <= 64.99) {
+                document.getElementById("grade").innerHTML = "You got grade C" + "<br>" + "An average result, try harder!"
+            }
+            else if(ans >= 45 && ans <= 54.99) {
+                document.getElementById("grade").innerHTML = "You got grade D" + "<br>" + "A fair performance: Please quit playing and read"
+            }
+            else if(ans >=40 && ans <=44.99) {
+                document.getElementById("grade").innerHTML = "You got grade E" + "<br>" + "A poor performance: Try to engage in lessons"
+            }
+            else {
+                document.getElementById("grade").innerHTML = "You got an F" + "<br>" + "A very bad result: Advice to repeat"
+            }
         }
     </script>
 </body>
